@@ -9,7 +9,7 @@
 // @license      MIT
 // ==/UserScript==
 
-/* jshint esversion: 5 */
+/* jshint esversion: 6 */
 
 (function() {
     'use strict';
