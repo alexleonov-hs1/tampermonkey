@@ -6,6 +6,7 @@
 // @author       Alex Leonov
 // @match        https://soeidental.atlassian.net/*
 // @grant        none
+// @license      Proprietary
 // ==/UserScript==
 
 (function() {
