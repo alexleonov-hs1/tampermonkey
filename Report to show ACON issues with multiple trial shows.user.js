@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Report to show ACON issues with multiple trial shows
+// @name         Report to show ACON issues with trial shows
 // @namespace    http://henryscheinone.co.nz/
-// @version      0.2
+// @version      0.3
 // @description  ugly but functional report
 // @author       Alex Leonov
 // @match        https://soeidental.atlassian.net/*
@@ -16,7 +16,7 @@
 
     const b = document.createElement('button');
     document.getElementsByTagName('nav')[0].appendChild(b);
-    b.innerText = 'Show conv tickets with multiple trials shows';
+    b.innerText = 'Show conv tickets with trials shows';
 
     b.onclick = function() {
         fetch("https://soeidental.atlassian.net/rest/api/2/search?jql=project%3DACON%20AND%20status%20WAS%20%22Ready%20for%20trial%20review%22%20during%20(startOfMonth(-3)%2C%20endOfMonth(-1))&expand=changelog&maxResults=100&fields=id,summary,changelog")
