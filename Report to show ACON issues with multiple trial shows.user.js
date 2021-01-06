@@ -25,7 +25,7 @@
             const records = data.issues.map(i => {
                 const histories = i.changelog.histories.filter(h => h.items.find(hi => hi.fieldId==="status" && hi.toString==="Ready for trial review"));
 
-                if (histories.length < 2) return null;
+                if (histories.length < 1) return null;
 
                 return {
                     key: i.key,
