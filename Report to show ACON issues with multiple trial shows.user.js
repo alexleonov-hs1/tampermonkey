@@ -1,13 +1,15 @@
 // ==UserScript==
 // @name         Report to show ACON issues with multiple trial shows
 // @namespace    http://henryscheinone.co.nz/
-// @version      0.1
+// @version      0.2
 // @description  ugly but functional report
 // @author       Alex Leonov
 // @match        https://soeidental.atlassian.net/*
 // @grant        none
 // @license      MIT
 // ==/UserScript==
+
+/* jshint esversion: 5 */
 
 (function() {
     'use strict';
