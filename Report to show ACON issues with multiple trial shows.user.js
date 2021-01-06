@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Report to show ACON issues with multiple trial shows
 // @namespace    http://henryscheinone.co.nz/
-// @version      0.4
+// @version      0.5
 // @description  ugly but functional report
 // @author       Alex Leonov
 // @match        https://soeidental.atlassian.net/*
@@ -16,10 +16,12 @@
 
     const b = document.createElement('button');
     document.getElementsByTagName('nav')[0].appendChild(b);
-    b.innerText = 'Show conv tickets with trials shows';
+    b.innerText = 'Trial Review tickets report';
 
     b.onclick = function() {
-        fetch("https://soeidental.atlassian.net/rest/api/2/search?jql=project%3DACON%20AND%20status%20WAS%20%22Ready%20for%20trial%20review%22%20during%20(startOfMonth(-3)%2C%20endOfMonth(-1))&expand=changelog&maxResults=100&fields=id,summary,changelog")
+        const jql = 'project=ACON AND status WAS "Ready for trial review" during (startOfMonth(-6), endOfMonth(-1)) AND NOT (summary ~ "VAP:") AND NOT (summary ~ "DI conversion")';
+        
+        fetch(`https://soeidental.atlassian.net/rest/api/2/search?jql=${encodeURIComponent(jql)}&expand=changelog&maxResults=100&fields=id,summary,changelog`)
         .then(response => response.json())
         .then(data => {
             const records = data.issues.map(i => {
