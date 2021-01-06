@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Report to show ACON issues with trial shows
 // @namespace    http://henryscheinone.co.nz/
-// @version      0.3
+// @version      0.4
 // @description  ugly but functional report
 // @author       Alex Leonov
 // @match        https://soeidental.atlassian.net/*
